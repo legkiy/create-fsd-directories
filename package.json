@@ -1,0 +1,24 @@
+{
+  "name": "create-fsd-directories",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": {
+    "create-dir": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "cli",
+    "directories",
+    "automation"
+  ],
+  "author": "Nikita <Legkiy> Maksakov",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.12.0"
+  }
+}
