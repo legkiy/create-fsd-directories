@@ -3,9 +3,9 @@ import * as fs from 'fs';
 import { CreateDirType } from '../model';
 
 const DIR_MAP = {
-  [CreateDirType.Entities]: path.resolve('src', CreateDirType.Entities),
-  [CreateDirType.Features]: path.resolve('src', CreateDirType.Features),
-  [CreateDirType.Widgets]: path.resolve('src', CreateDirType.Widgets),
+  [CreateDirType.Entities]: path.resolve('src', 'entities'),
+  [CreateDirType.Features]: path.resolve('src', 'features'),
+  [CreateDirType.Widgets]: path.resolve('src', 'widgets'),
 };
 
 const subDirs = ['lib', 'model', 'ui'];
@@ -25,7 +25,9 @@ class CreateDirService {
 
     // Если такая директория уже существует то завершаем
     if (fs.existsSync(fullPath)) {
-      console.error(`!! Директория с именем < ${this._folderName} > уже существует:\n${fullPath}`);
+      console.error(
+        `!! Directory with the name <${this._folderName}> already exists: \ n ${fullPath}`
+      );
       process.exit(1);
     } else {
       this._createDirectoryWithIndex(fullPath);
@@ -40,7 +42,9 @@ class CreateDirService {
     const dirPath = path.join(fullPath, subDir);
 
     fs.mkdirSync(dirPath, { recursive: true });
-    console.log(`\nДиректория ${subDir ? '< ' + subDir + ' > ' : ''}создана:\n${dirPath}`);
+    console.log(
+      `\Directory ${subDir ? '< ' + subDir + ' > ' : ''}created:\n${dirPath}`
+    );
 
     this._createIndexFile(dirPath);
   }
