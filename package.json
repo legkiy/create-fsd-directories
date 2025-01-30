@@ -1,7 +1,11 @@
 {
   "name": "create-fsd-directories",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legkiy/create-fsd-directories"
+  },
   "main": "dist/index.js",
   "bin": {
     "create-dir": "./dist/index.js"
