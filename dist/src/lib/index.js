@@ -26,9 +26,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const path = __importStar(require("path"));
 const fs = __importStar(require("fs"));
 const DIR_MAP = {
-    ["entities" /* CreateDirType.Entities */]: path.resolve('src', "entities" /* CreateDirType.Entities */),
-    ["features" /* CreateDirType.Features */]: path.resolve('src', "features" /* CreateDirType.Features */),
-    ["Widgets" /* CreateDirType.Widgets */]: path.resolve('src', "Widgets" /* CreateDirType.Widgets */),
+    ["e" /* CreateDirType.Entities */]: path.resolve('src', 'entities'),
+    ["f" /* CreateDirType.Features */]: path.resolve('src', 'features'),
+    ["w" /* CreateDirType.Widgets */]: path.resolve('src', 'widgets'),
 };
 const subDirs = ['lib', 'model', 'ui'];
 class CreateDirService {
@@ -40,7 +40,7 @@ class CreateDirService {
         const fullPath = path.resolve(this._root_dir, this._folderName);
         // Если такая директория уже существует то завершаем
         if (fs.existsSync(fullPath)) {
-            console.error(`!! Директория с именем < ${this._folderName} > уже существует:\n${fullPath}`);
+            console.error(`!! Directory with the name <${this._folderName}> already exists: \ n ${fullPath}`);
             process.exit(1);
         }
         else {
@@ -53,7 +53,7 @@ class CreateDirService {
     _createDirectoryWithIndex(fullPath, subDir = '') {
         const dirPath = path.join(fullPath, subDir);
         fs.mkdirSync(dirPath, { recursive: true });
-        console.log(`\nДиректория ${subDir ? '< ' + subDir + ' > ' : ''}создана:\n${dirPath}`);
+        console.log(`\Directory ${subDir ? '< ' + subDir + ' > ' : ''}created:\n${dirPath}`);
         this._createIndexFile(dirPath);
     }
     // Создание файлов
