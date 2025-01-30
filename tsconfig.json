@@ -2,14 +2,10 @@
   "compilerOptions": {
     "strict": true,
     "module": "CommonJS",
-    "target": "ESNext",
+    "target": "ES6",
     "outDir": "./dist",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
   },
   "include": ["./**/*.ts"]
 }

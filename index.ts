@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { CreateDirType } from '@/model';
-import CreateDirService from '@/lib';
+import { CreateDirType } from './src/model';
+import CreateDirService from './src/lib';
 
 // Чтение аргументов из командной строки и устанавливаем первую букву заглавной
 const args = process.argv.slice(2);
